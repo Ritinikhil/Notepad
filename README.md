@@ -1,5 +1,5 @@
 # Notepad 
-# NotePad Features
+# Extra NotePad Features
 1. Secure and encrypt the doc with a pin
 2. Able to change the themes
 3. Fetch text from PDF
