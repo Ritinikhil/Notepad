@@ -1,0 +1,26 @@
+#UNITY KEY GENERATOR
+n=input("Enter Name :")
+with open('C:\\Users\\DELL\\OneDrive\\Desktop\\unity_server\\id.txt' ,'r') as file_1:
+    number = int(file_1.read())
+    number += 1
+with open("C:\\Users\\DELL\\OneDrive\\Desktop\\unity_server\\id.txt", 'w') as file_1:
+    file_1.write(str(number))
+import hashlib
+file_1.close()
+def encrypt_username(username):
+    hashed_username = hashlib.sha256(username.encode()).hexdigest()
+    return hashed_username
+
+def generate_key(username, key_number):
+    encrypted_username = encrypt_username(username)
+    key = encrypted_username[:4] + str(key_number).zfill(6)
+    return key
+unique_number = number+1234
+generated_key = generate_key(n, unique_number)
+print("Generated key:", generated_key)
+with open("C:\\Users\\DELL\\OneDrive\\Desktop\\unity_server\\keys.txt",'a') as file_2:
+    file_2.write(generated_key+'\n')
+    
+
+
+
